@@ -1,10 +1,17 @@
 package com.darekbojanek.jackson.json.demo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.LinkedList;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Student {
     private int id;
     private String firstName;
     private String lastName;
     private boolean active;
+    private Address address;
+    private LinkedList<String> languages;
 
     public Student() {
     }
@@ -39,5 +46,21 @@ public class Student {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public LinkedList<String> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(LinkedList<String> languages) {
+        this.languages = languages;
     }
 }
